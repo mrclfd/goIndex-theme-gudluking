@@ -671,7 +671,7 @@ function onSearchResultItemClick(a_ele) {
     var cur = window.current_drive_order;
     var dialog = mdui.dialog({
         title: '',
-        content: '<div class="mdui-text-center mdui-typo-title mdui-m-b-1">正在获取目标路径...</div><div class="mdui-spinner mdui-spinner-colorful mdui-center"></div>',
+        content: '<div class="mdui-text-center mdui-typo-title mdui-m-b-1">Mendapatkan jalur target...</div><div class="mdui-spinner mdui-spinner-colorful mdui-center"></div>',
         // content: '<div class="mdui-spinner mdui-spinner-colorful mdui-center"></div>',
         history: false,
         modal: true,
@@ -691,23 +691,23 @@ function onSearchResultItemClick(a_ele) {
                 modal: true,
                 closeOnEsc: true,
                 buttons: [{
-                    text: '打开',
+                    text: 'Membuka',
                     onClick: function() {
                         window.location.href = href
                     }
                 }, {
-                    text: '新标签中打开',
+                    text: 'Buka di tab baru',
                     onClick: function() {
                         window.open(href)
                     }
-                }, { text: '取消' }]
+                }, { text: 'Membatalkan' }]
             });
             return;
         }
         dialog.close();
         dialog = mdui.dialog({
             title: 'Erro',
-            content: 'o(╯□╰)o 可能是因为该盘中并不存在此项！也可能因为没有把【与我共享】的文件添加到个人云端硬盘中！',
+            content: 'o(╯□╰)o Mungkin karena item ini tidak ada di disk! ',
             history: false,
             modal: true,
             closeOnEsc: true,
@@ -777,7 +777,7 @@ function file_code(path) {
 <pre id="editor" ></pre>
 </div>
 <div class="mdui-textfield">
-  <label class="mdui-textfield-label">下载地址</label>
+  <label class="mdui-textfield-label">tautan unduhan</label>
   <input class="mdui-textfield-input" type="text" value="${href}"/>
 </div>
 <a href="${href}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
@@ -847,10 +847,10 @@ function file_video(path) {
         .map(it => `<li class="mdui-menu-item"><a href="${it.href}" class="mdui-ripple">${it.text}</a></li>`)
         .join('');
     player_items += `<li class="mdui-divider"></li>
-                   <li class="mdui-menu-item"><a id="copy-link" class="mdui-ripple">复制链接</a></li>`;
+                   <li class="mdui-menu-item"><a id="copy-link" class="mdui-ripple">Salin tautan</a></li>`;
     const playBtn = `
       <button class="mdui-btn mdui-ripple mdui-color-theme-accent" mdui-menu="{target:'#player-items'}">
-        <i class="mdui-icon material-icons">&#xe039;</i>外部播放器播放<i class="mdui-icon material-icons">&#xe5cf;</i>
+        <i class="mdui-icon material-icons">&#xe039;</i>Pemutaran pemutar eksternal<i class="mdui-icon material-icons">&#xe5cf;</i>
       </button>
       <ul class="mdui-menu" id="player-items">${player_items}</ul>`;
 
@@ -915,11 +915,11 @@ function file_video(path) {
   <br>${playBtn}
   <!-- 固定标签 -->
   <div class="mdui-textfield">
-    <label class="mdui-textfield-label">下载地址</label>
+    <label class="mdui-textfield-label">tautan unduhan</label>
     <input class="mdui-textfield-input" type="text" value="${url}"/>
   </div>
   <div class="mdui-textfield">
-    <label class="mdui-textfield-label">HTML 引用地址</label>
+    <label class="mdui-textfield-label">Alamat kutipan HTML</label>
     <textarea class="mdui-textfield-input"><video><source src="${url}" type="video/mp4"></video></textarea>
   </div>
 </div>
@@ -928,7 +928,7 @@ function file_video(path) {
     $('#content').html(content);
     $('#copy-link').on('click', () => {
         copyToClipboard(url);
-        mdui.snackbar('已复制到剪切板!');
+        mdui.snackbar('Disalin ke papan klip!');
     });
 
     if (ext == 'm3u8') {
@@ -937,11 +937,11 @@ function file_video(path) {
             controls: ['play-large', 'restart', 'play', 'progress', 'current-time', 'duration', 'mute', 'volume', 'captions', 'settings', 'pip', 'fullscreen'],
             settings: ['captions', 'quality', 'speed', 'loop'],
             i18n: {
-                speed: '速度',
-                normal: '正常',
-                quality: '质量',
-                captions: '字幕',
-                disabled: '禁用',
+                speed: 'kecepatan',
+                normal: 'normal',
+                quality: 'kualitas',
+                captions: 'kata-kata',
+                disabled: 'dimatikan',
             },
             blankVideo: 'https://cdn.plyr.io/static/blank.mp4',
             autoplay: true,
@@ -977,11 +977,11 @@ function file_video(path) {
             controls: ['play-large', 'restart', 'play', 'progress', 'current-time', 'duration', 'mute', 'volume', 'captions', 'settings', 'pip', 'fullscreen'],
             settings: ['captions', 'quality', 'speed', 'loop'],
             i18n: {
-                speed: '速度',
-                normal: '正常',
-                quality: '质量',
-                captions: '字幕',
-                disabled: '禁用',
+                speed: 'kecepatan',
+                normal: 'normal',
+                quality: 'kualitas',
+                captions: 'kata-kata',
+                disabled: 'dimatikan',
             },
             blankVideo: 'https://cdn.plyr.io/static/blank.mp4',
             autoplay: true,
@@ -998,11 +998,11 @@ function file_video(path) {
             controls: ['play-large', 'restart', 'play', 'progress', 'current-time', 'duration', 'mute', 'volume', 'captions', 'settings', 'pip', 'fullscreen'],
             settings: ['captions', 'quality', 'speed', 'loop'],
             i18n: {
-                speed: '速度',
-                normal: '正常',
-                quality: '质量',
-                captions: '字幕',
-                disabled: '禁用',
+                speed: 'kecepatan',
+                normal: 'normal',
+                quality: 'kualitas',
+                captions: 'kata-kata',
+                disabled: 'dimatikan',
             },
             blankVideo: 'https://cdn.plyr.io/static/blank.mp4',
             autoplay: true,
@@ -1102,11 +1102,11 @@ function file_audio(path) {
   <br>
   <!-- 固定标签 -->
   <div class="mdui-textfield">
-    <label class="mdui-textfield-label">下载地址</label>
+    <label class="mdui-textfield-label">tautan unduhan</label>
     <input class="mdui-textfield-input" type="text" value="${url}"/>
   </div>
   <div class="mdui-textfield">
-    <label class="mdui-textfield-label">HTML 引用地址</label>
+    <label class="mdui-textfield-label">Alamat kutipan HTML</label>
     <textarea class="mdui-textfield-input"><audio><source src="${url}"></audio></textarea>
   </div>
 </div>
@@ -1124,11 +1124,11 @@ function file_audio(path) {
 
     const player = new Plyr('audio', {
         i18n: {
-            speed: '速度',
-            normal: '正常',
-            quality: '质量',
-            captions: '字幕',
-            disabled: '禁用',
+            speed: 'kecepatan',
+            normal: 'normal',
+            quality: 'kualitas',
+            captions: 'kata-kata',
+            disabled: 'dimatikan',
         },
     });
     player.source = {
@@ -1186,10 +1186,10 @@ function file_image(path) {
             <div class="mdui-container">
                 <div class="mdui-row-xs-2 mdui-m-b-1">
                     <div class="mdui-col">
-                        ${prev_child ? `<button id="leftBtn" data-filepath="${prev_child}" class="mdui-btn mdui-btn-block mdui-color-theme-accent mdui-ripple">上一张</button>` : `<button class="mdui-btn mdui-btn-block mdui-color-theme-accent mdui-ripple" disabled>上一张</button>`}
+                        ${prev_child ? `<button id="leftBtn" data-filepath="${prev_child}" class="mdui-btn mdui-btn-block mdui-color-theme-accent mdui-ripple">Sebelumnya</button>` : `<button class="mdui-btn mdui-btn-block mdui-color-theme-accent mdui-ripple" disabled>Sebelumnya</button>`}
                     </div>
                     <div class="mdui-col">
-                        ${next_child ? `<button id="rightBtn"  data-filepath="${next_child}" class="mdui-btn mdui-btn-block mdui-color-theme-accent mdui-ripple">下一张</button>` : `<button class="mdui-btn mdui-btn-block mdui-color-theme-accent mdui-ripple" disabled>下一张</button>`}
+                        ${next_child ? `<button id="rightBtn"  data-filepath="${next_child}" class="mdui-btn mdui-btn-block mdui-color-theme-accent mdui-ripple">Lanjut</button>` : `<button class="mdui-btn mdui-btn-block mdui-color-theme-accent mdui-ripple" disabled>Lanjut</button>`}
                     </div> 
                 </div>
             </div>
@@ -1209,15 +1209,15 @@ function file_image(path) {
     </div>
   <br>
   <div class="mdui-textfield">
-    <label class="mdui-textfield-label">下载地址</label>
+    <label class="mdui-textfield-label">tautan unduhan</label>
     <input class="mdui-textfield-input" type="text" value="${url}"/>
   </div>
   <div class="mdui-textfield">
-    <label class="mdui-textfield-label">HTML 引用地址</label>
+    <label class="mdui-textfield-label">Alamat kutipan HTML</label>
     <input class="mdui-textfield-input" type="text" value="<img src='${url}' />"/>
   </div>
         <div class="mdui-textfield">
-    <label class="mdui-textfield-label">Markdown 引用地址</label>
+    <label class="mdui-textfield-label">Alamat kutipan Markdown</label>
     <input class="mdui-textfield-input" type="text" value="![](${url})"/>
   </div>
         <br>
