@@ -1,6 +1,6 @@
 const authConfig = {
   "siteName": "GoIndex",  // 网站名称
-  "siteIcon": "//cdn.jsdelivr.net/gh/5MayRain/goIndex-theme-nexmoe@1.1.6/images/favicon.ico", //网站图标
+  "siteIcon": "//cdn.jsdelivr.net/gh/mrclfd/lamphor-goindex@1.1.6/images/favicon.ico", //网站图标
   "version": "2.0.5", // 程序版本
   "client_id": "",
   "client_secret": "",
@@ -28,14 +28,14 @@ const authConfig = {
     },
     {
       id: "drive_id",
-      name: "团队盘1",
+      name: "Disk 1",
       user: 'user1',
       pass: "111",
       protect_file_link: true
     },
     {
       id: "folder_id",
-      name: "文件夹",
+      name: "map",
       // 只设置密码、只设置用户名、同时设置用户名密码，都是可以的
       user: '',
       pass: "222",
@@ -57,7 +57,7 @@ const authConfig = {
    */
   "search_result_list_page_size": 50,
   // 确认有 cors 用途的可以开启
-  "enable_cors_file_down": false,
+  "enable_cors_file_down": true,
   /**
    * 上面的 basic auth 已经包含了盘内全局保护的功能。所以默认不再去认证 .password 文件内的密码;
    * 如果在全局认证的基础上，仍需要给某些目录单独进行 .password 文件内的密码验证的话，将此选项设置为 true;
@@ -71,28 +71,28 @@ const authConfig = {
  */
 const themeConfig = {
   // 仓库地址
-  "url": "//cdn.jsdelivr.net/gh/5MayRain/goIndex-theme-nexmoe",
+  "url": "//cdn.jsdelivr.net/gh/mrclfd/lamphor-goindex",
   // 主题 ( light:亮色 | dark:深色 )
-  "theme": "light", 
+  "theme": "dark", 
   // 主色
   "main_color": "blue-grey",
   // 强调色
   "accent_color": "blue",
   // 头像
-  "avatar": "//cdn.jsdelivr.net/gh/5MayRain/ImageHosting/Blog/Website/avatar.png",
+  "avatar": "//cdn.jsdelivr.net/gh/mrclfd/ImageHosting/Blog/Website/avatar.png",
   // 背景图片
-  "bimg": "//cdn.jsdelivr.net/gh/5MayRain/ImageHosting/Blog/Posts/2021/07/20/cover_01.jpg",
+  "bimg": "//cdn.jsdelivr.net/gh/mrclfd/ImageHosting/Blog/Posts/2021/07/20/cover_01.jpg",
   // 显示菜单
   "menu_show": true,
   // 菜单组
   "menus": [
     {
-      name: "Blog",
-      url: "//mrzgh.top"
+      name: "TG Group",
+      url: "//t.me/MarcelFaraday"
     },
     {
-      name: "Log in",
-      url: "//drive.google.com"
+      name: "Contact",
+      url: "//t.me/MarcelFaraday"
     }
   ],
   // 定义可预览的文件
